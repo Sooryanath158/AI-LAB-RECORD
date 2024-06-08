@@ -1,0 +1,15 @@
+enjoy:-sunny,warm.
+strawberrry_picking:-warm,plesant.
+notstrawberry_picking:-raining.
+wet:-raining.
+warm.
+raining.
+sunny.
+
+OUTPUT:
+strawberry_picking
+true
+enjoy 
+true
+wet
+true
