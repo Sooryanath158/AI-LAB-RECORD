@@ -1,0 +1,88 @@
+CODE:1
+woman(mia).
+woman(jody).
+woman(yolanda).
+playsAirGuitar(jody).
+party.
+Query 1: ?-woman(mia).
+Query 2: ?-playsAirGuitar(mia).
+Query 3: ?-party.
+Query 4: ?-concert.
+
+
+OUTPUT:
+woman(mia)
+true
+playsguitar(mia)
+false
+party
+true
+concert
+procedure'concert ' does not exist
+
+CODE:2
+happy(yolanda).
+listens2music(mia).
+Listens2music(yolanda):-happy(yolanda).
+playsAirGuitar(mia):-listens2music(mia).
+playsAirGuitar(Yolanda):-listens2music(yolanda).
+
+OUTPUT:
+playsguitar(mia)
+true.
+playsguitar(yolanda).
+true.
+
+CODE:3
+likes(dan,sally).
+likes(sally,dan).
+likes(john,brittney).
+married(X,Y) :- likes(X,Y) , likes(Y,X).
+friends(X,Y) :- likes(X,Y) ; likes(Y,X).
+
+OUTPUT:
+LIKES(DAN,x).
+X=sally.
+married(dan,sally).
+true
+married(john,britney)
+false.
+
+CODE:4
+ood(burger).
+food(sandwich).
+food(pizza).
+lunch(sandwich).
+dinner(pizza).
+meal(X):-food(X).
+
+OUTPUT:
+food(pixxa)
+true
+meal(x),food(x)
+x=burger.
+x=sandwich
+dinner(sandwich)
+false
+
+CODE:5
+owns(jack,car(bmw)).
+owns(john,car(chevy)).
+owns(olivia,car(civic)).
+owns(jane,car(chevy)).
+sedan(car(bmw)).
+sedan(car(civic)).
+truck(car(chevy)).
+
+OUTPUT:
+
+OWNS(JOHBN,X)
+X=CAR(CHVY).
+OWNS(JOHN,_).
+true.
+owns(who car(chevy))
+who=john.
+owns(jane,X),sedan(x).
+false.
+owns(jane,X),truck(X).
+x=car(chevy).
